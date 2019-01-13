@@ -1,106 +1,261 @@
 package name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto;
 
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncUnaryCall;
+import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
+import static io.grpc.stub.ClientCalls.blockingUnaryCall;
+import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncUnaryCall;
+import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-@javax.annotation.Generated("by gRPC proto compiler")
-public class PaintGatewayGrpc {
+/**
+ * <pre>
+ * Incoming paint task queue.
+ * </pre>
+ */
+@javax.annotation.Generated(
+    value = "by gRPC proto compiler (version 1.17.2-SNAPSHOT)",
+    comments = "Source: proto.proto")
+public final class PaintGatewayGrpc {
 
   private PaintGatewayGrpc() {}
 
   public static final String SERVICE_NAME = "name.jchein.portfolio.random_art.PaintGateway";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi
-  public static final io.grpc.MethodDescriptor<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CreatePaintArtworkTask,
-      name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived> METHOD_CREATE_PAINT_ARTWORK_TASKS =
-      io.grpc.MethodDescriptor.create(
-          io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING,
-          generateFullMethodName(
-              "name.jchein.portfolio.random_art.PaintGateway", "createPaintArtworkTasks"),
-          io.grpc.protobuf.ProtoUtils.marshaller(name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CreatePaintArtworkTask.getDefaultInstance()),
-          io.grpc.protobuf.ProtoUtils.marshaller(name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived.getDefaultInstance()));
-  @io.grpc.ExperimentalApi
-  public static final io.grpc.MethodDescriptor<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CreatePaintArtworkTask,
-      name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived> METHOD_CREATE_PAINT_ARTWORK_TASK =
-      io.grpc.MethodDescriptor.create(
-          io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING,
-          generateFullMethodName(
-              "name.jchein.portfolio.random_art.PaintGateway", "createPaintArtworkTask"),
-          io.grpc.protobuf.ProtoUtils.marshaller(name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CreatePaintArtworkTask.getDefaultInstance()),
-          io.grpc.protobuf.ProtoUtils.marshaller(name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived.getDefaultInstance()));
-  @io.grpc.ExperimentalApi
-  public static final io.grpc.MethodDescriptor<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CancelPaintArtworkTask,
-      name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived> METHOD_CANCEL_PAINT_ARTWORK_TASK =
-      io.grpc.MethodDescriptor.create(
-          io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING,
-          generateFullMethodName(
-              "name.jchein.portfolio.random_art.PaintGateway", "cancelPaintArtworkTask"),
-          io.grpc.protobuf.ProtoUtils.marshaller(name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CancelPaintArtworkTask.getDefaultInstance()),
-          io.grpc.protobuf.ProtoUtils.marshaller(name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived.getDefaultInstance()));
-  @io.grpc.ExperimentalApi
-  public static final io.grpc.MethodDescriptor<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.UpdatePaintArtworkTask,
-      name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived> METHOD_REPORT_TASK_STATE =
-      io.grpc.MethodDescriptor.create(
-          io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING,
-          generateFullMethodName(
-              "name.jchein.portfolio.random_art.PaintGateway", "reportTaskState"),
-          io.grpc.protobuf.ProtoUtils.marshaller(name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.UpdatePaintArtworkTask.getDefaultInstance()),
-          io.grpc.protobuf.ProtoUtils.marshaller(name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived.getDefaultInstance()));
+  private static volatile io.grpc.MethodDescriptor<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CreatePaintArtworkTask,
+      name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived> getCreatePaintArtworkTasksMethod;
 
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "createPaintArtworkTasks",
+      requestType = name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CreatePaintArtworkTask.class,
+      responseType = name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+  public static io.grpc.MethodDescriptor<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CreatePaintArtworkTask,
+      name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived> getCreatePaintArtworkTasksMethod() {
+    io.grpc.MethodDescriptor<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CreatePaintArtworkTask, name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived> getCreatePaintArtworkTasksMethod;
+    if ((getCreatePaintArtworkTasksMethod = PaintGatewayGrpc.getCreatePaintArtworkTasksMethod) == null) {
+      synchronized (PaintGatewayGrpc.class) {
+        if ((getCreatePaintArtworkTasksMethod = PaintGatewayGrpc.getCreatePaintArtworkTasksMethod) == null) {
+          PaintGatewayGrpc.getCreatePaintArtworkTasksMethod = getCreatePaintArtworkTasksMethod = 
+              io.grpc.MethodDescriptor.<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CreatePaintArtworkTask, name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "name.jchein.portfolio.random_art.PaintGateway", "createPaintArtworkTasks"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CreatePaintArtworkTask.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived.getDefaultInstance()))
+                  .setSchemaDescriptor(new PaintGatewayMethodDescriptorSupplier("createPaintArtworkTasks"))
+                  .build();
+          }
+        }
+     }
+     return getCreatePaintArtworkTasksMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CreatePaintArtworkTask,
+      name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived> getCreatePaintArtworkTaskMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "createPaintArtworkTask",
+      requestType = name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CreatePaintArtworkTask.class,
+      responseType = name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CreatePaintArtworkTask,
+      name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived> getCreatePaintArtworkTaskMethod() {
+    io.grpc.MethodDescriptor<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CreatePaintArtworkTask, name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived> getCreatePaintArtworkTaskMethod;
+    if ((getCreatePaintArtworkTaskMethod = PaintGatewayGrpc.getCreatePaintArtworkTaskMethod) == null) {
+      synchronized (PaintGatewayGrpc.class) {
+        if ((getCreatePaintArtworkTaskMethod = PaintGatewayGrpc.getCreatePaintArtworkTaskMethod) == null) {
+          PaintGatewayGrpc.getCreatePaintArtworkTaskMethod = getCreatePaintArtworkTaskMethod = 
+              io.grpc.MethodDescriptor.<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CreatePaintArtworkTask, name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "name.jchein.portfolio.random_art.PaintGateway", "createPaintArtworkTask"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CreatePaintArtworkTask.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived.getDefaultInstance()))
+                  .setSchemaDescriptor(new PaintGatewayMethodDescriptorSupplier("createPaintArtworkTask"))
+                  .build();
+          }
+        }
+     }
+     return getCreatePaintArtworkTaskMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CancelPaintArtworkTask,
+      name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived> getCancelPaintArtworkTaskMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "cancelPaintArtworkTask",
+      requestType = name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CancelPaintArtworkTask.class,
+      responseType = name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CancelPaintArtworkTask,
+      name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived> getCancelPaintArtworkTaskMethod() {
+    io.grpc.MethodDescriptor<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CancelPaintArtworkTask, name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived> getCancelPaintArtworkTaskMethod;
+    if ((getCancelPaintArtworkTaskMethod = PaintGatewayGrpc.getCancelPaintArtworkTaskMethod) == null) {
+      synchronized (PaintGatewayGrpc.class) {
+        if ((getCancelPaintArtworkTaskMethod = PaintGatewayGrpc.getCancelPaintArtworkTaskMethod) == null) {
+          PaintGatewayGrpc.getCancelPaintArtworkTaskMethod = getCancelPaintArtworkTaskMethod = 
+              io.grpc.MethodDescriptor.<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CancelPaintArtworkTask, name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "name.jchein.portfolio.random_art.PaintGateway", "cancelPaintArtworkTask"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CancelPaintArtworkTask.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived.getDefaultInstance()))
+                  .setSchemaDescriptor(new PaintGatewayMethodDescriptorSupplier("cancelPaintArtworkTask"))
+                  .build();
+          }
+        }
+     }
+     return getCancelPaintArtworkTaskMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.UpdatePaintArtworkTask,
+      name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived> getReportTaskStateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "reportTaskState",
+      requestType = name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.UpdatePaintArtworkTask.class,
+      responseType = name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+  public static io.grpc.MethodDescriptor<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.UpdatePaintArtworkTask,
+      name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived> getReportTaskStateMethod() {
+    io.grpc.MethodDescriptor<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.UpdatePaintArtworkTask, name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived> getReportTaskStateMethod;
+    if ((getReportTaskStateMethod = PaintGatewayGrpc.getReportTaskStateMethod) == null) {
+      synchronized (PaintGatewayGrpc.class) {
+        if ((getReportTaskStateMethod = PaintGatewayGrpc.getReportTaskStateMethod) == null) {
+          PaintGatewayGrpc.getReportTaskStateMethod = getReportTaskStateMethod = 
+              io.grpc.MethodDescriptor.<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.UpdatePaintArtworkTask, name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "name.jchein.portfolio.random_art.PaintGateway", "reportTaskState"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.UpdatePaintArtworkTask.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived.getDefaultInstance()))
+                  .setSchemaDescriptor(new PaintGatewayMethodDescriptorSupplier("reportTaskState"))
+                  .build();
+          }
+        }
+     }
+     return getReportTaskStateMethod;
+  }
+
+  /**
+   * Creates a new async stub that supports all call types for the service
+   */
   public static PaintGatewayStub newStub(io.grpc.Channel channel) {
     return new PaintGatewayStub(channel);
   }
 
+  /**
+   * Creates a new blocking-style stub that supports unary and streaming output calls on the service
+   */
   public static PaintGatewayBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
     return new PaintGatewayBlockingStub(channel);
   }
 
+  /**
+   * Creates a new ListenableFuture-style stub that supports unary calls on the service
+   */
   public static PaintGatewayFutureStub newFutureStub(
       io.grpc.Channel channel) {
     return new PaintGatewayFutureStub(channel);
   }
 
-  public static interface PaintGateway {
+  /**
+   * <pre>
+   * Incoming paint task queue.
+   * </pre>
+   */
+  public static abstract class PaintGatewayImplBase implements io.grpc.BindableService {
 
+    /**
+     */
     public io.grpc.stub.StreamObserver<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CreatePaintArtworkTask> createPaintArtworkTasks(
-        io.grpc.stub.StreamObserver<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived> responseObserver);
+        io.grpc.stub.StreamObserver<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived> responseObserver) {
+      return asyncUnimplementedStreamingCall(getCreatePaintArtworkTasksMethod(), responseObserver);
+    }
 
+    /**
+     */
     public void createPaintArtworkTask(name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CreatePaintArtworkTask request,
-        io.grpc.stub.StreamObserver<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived> responseObserver);
+        io.grpc.stub.StreamObserver<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived> responseObserver) {
+      asyncUnimplementedUnaryCall(getCreatePaintArtworkTaskMethod(), responseObserver);
+    }
 
+    /**
+     */
     public void cancelPaintArtworkTask(name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CancelPaintArtworkTask request,
-        io.grpc.stub.StreamObserver<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived> responseObserver);
+        io.grpc.stub.StreamObserver<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived> responseObserver) {
+      asyncUnimplementedUnaryCall(getCancelPaintArtworkTaskMethod(), responseObserver);
+    }
 
+    /**
+     */
     public io.grpc.stub.StreamObserver<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.UpdatePaintArtworkTask> reportTaskState(
-        io.grpc.stub.StreamObserver<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived> responseObserver);
+        io.grpc.stub.StreamObserver<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived> responseObserver) {
+      return asyncUnimplementedStreamingCall(getReportTaskStateMethod(), responseObserver);
+    }
+
+    @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
+      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+          .addMethod(
+            getCreatePaintArtworkTasksMethod(),
+            asyncBidiStreamingCall(
+              new MethodHandlers<
+                name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CreatePaintArtworkTask,
+                name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived>(
+                  this, METHODID_CREATE_PAINT_ARTWORK_TASKS)))
+          .addMethod(
+            getCreatePaintArtworkTaskMethod(),
+            asyncServerStreamingCall(
+              new MethodHandlers<
+                name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CreatePaintArtworkTask,
+                name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived>(
+                  this, METHODID_CREATE_PAINT_ARTWORK_TASK)))
+          .addMethod(
+            getCancelPaintArtworkTaskMethod(),
+            asyncServerStreamingCall(
+              new MethodHandlers<
+                name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CancelPaintArtworkTask,
+                name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived>(
+                  this, METHODID_CANCEL_PAINT_ARTWORK_TASK)))
+          .addMethod(
+            getReportTaskStateMethod(),
+            asyncBidiStreamingCall(
+              new MethodHandlers<
+                name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.UpdatePaintArtworkTask,
+                name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived>(
+                  this, METHODID_REPORT_TASK_STATE)))
+          .build();
+    }
   }
 
-  public static interface PaintGatewayBlockingClient {
-
-    public java.util.Iterator<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived> createPaintArtworkTask(
-        name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CreatePaintArtworkTask request);
-
-    public java.util.Iterator<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived> cancelPaintArtworkTask(
-        name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CancelPaintArtworkTask request);
-  }
-
-  public static interface PaintGatewayFutureClient {
-  }
-
-  public static class PaintGatewayStub extends io.grpc.stub.AbstractStub<PaintGatewayStub>
-      implements PaintGateway {
+  /**
+   * <pre>
+   * Incoming paint task queue.
+   * </pre>
+   */
+  public static final class PaintGatewayStub extends io.grpc.stub.AbstractStub<PaintGatewayStub> {
     private PaintGatewayStub(io.grpc.Channel channel) {
       super(channel);
     }
@@ -116,37 +271,45 @@ public class PaintGatewayGrpc {
       return new PaintGatewayStub(channel, callOptions);
     }
 
-    @java.lang.Override
+    /**
+     */
     public io.grpc.stub.StreamObserver<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CreatePaintArtworkTask> createPaintArtworkTasks(
         io.grpc.stub.StreamObserver<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived> responseObserver) {
       return asyncBidiStreamingCall(
-          getChannel().newCall(METHOD_CREATE_PAINT_ARTWORK_TASKS, getCallOptions()), responseObserver);
+          getChannel().newCall(getCreatePaintArtworkTasksMethod(), getCallOptions()), responseObserver);
     }
 
-    @java.lang.Override
+    /**
+     */
     public void createPaintArtworkTask(name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CreatePaintArtworkTask request,
         io.grpc.stub.StreamObserver<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived> responseObserver) {
       asyncServerStreamingCall(
-          getChannel().newCall(METHOD_CREATE_PAINT_ARTWORK_TASK, getCallOptions()), request, responseObserver);
+          getChannel().newCall(getCreatePaintArtworkTaskMethod(), getCallOptions()), request, responseObserver);
     }
 
-    @java.lang.Override
+    /**
+     */
     public void cancelPaintArtworkTask(name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CancelPaintArtworkTask request,
         io.grpc.stub.StreamObserver<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived> responseObserver) {
       asyncServerStreamingCall(
-          getChannel().newCall(METHOD_CANCEL_PAINT_ARTWORK_TASK, getCallOptions()), request, responseObserver);
+          getChannel().newCall(getCancelPaintArtworkTaskMethod(), getCallOptions()), request, responseObserver);
     }
 
-    @java.lang.Override
+    /**
+     */
     public io.grpc.stub.StreamObserver<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.UpdatePaintArtworkTask> reportTaskState(
         io.grpc.stub.StreamObserver<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived> responseObserver) {
       return asyncBidiStreamingCall(
-          getChannel().newCall(METHOD_REPORT_TASK_STATE, getCallOptions()), responseObserver);
+          getChannel().newCall(getReportTaskStateMethod(), getCallOptions()), responseObserver);
     }
   }
 
-  public static class PaintGatewayBlockingStub extends io.grpc.stub.AbstractStub<PaintGatewayBlockingStub>
-      implements PaintGatewayBlockingClient {
+  /**
+   * <pre>
+   * Incoming paint task queue.
+   * </pre>
+   */
+  public static final class PaintGatewayBlockingStub extends io.grpc.stub.AbstractStub<PaintGatewayBlockingStub> {
     private PaintGatewayBlockingStub(io.grpc.Channel channel) {
       super(channel);
     }
@@ -162,23 +325,29 @@ public class PaintGatewayGrpc {
       return new PaintGatewayBlockingStub(channel, callOptions);
     }
 
-    @java.lang.Override
+    /**
+     */
     public java.util.Iterator<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived> createPaintArtworkTask(
         name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CreatePaintArtworkTask request) {
       return blockingServerStreamingCall(
-          getChannel(), METHOD_CREATE_PAINT_ARTWORK_TASK, getCallOptions(), request);
+          getChannel(), getCreatePaintArtworkTaskMethod(), getCallOptions(), request);
     }
 
-    @java.lang.Override
+    /**
+     */
     public java.util.Iterator<name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived> cancelPaintArtworkTask(
         name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CancelPaintArtworkTask request) {
       return blockingServerStreamingCall(
-          getChannel(), METHOD_CANCEL_PAINT_ARTWORK_TASK, getCallOptions(), request);
+          getChannel(), getCancelPaintArtworkTaskMethod(), getCallOptions(), request);
     }
   }
 
-  public static class PaintGatewayFutureStub extends io.grpc.stub.AbstractStub<PaintGatewayFutureStub>
-      implements PaintGatewayFutureClient {
+  /**
+   * <pre>
+   * Incoming paint task queue.
+   * </pre>
+   */
+  public static final class PaintGatewayFutureStub extends io.grpc.stub.AbstractStub<PaintGatewayFutureStub> {
     private PaintGatewayFutureStub(io.grpc.Channel channel) {
       super(channel);
     }
@@ -200,19 +369,20 @@ public class PaintGatewayGrpc {
   private static final int METHODID_CREATE_PAINT_ARTWORK_TASKS = 2;
   private static final int METHODID_REPORT_TASK_STATE = 3;
 
-  private static class MethodHandlers<Req, Resp> implements
+  private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final PaintGateway serviceImpl;
+    private final PaintGatewayImplBase serviceImpl;
     private final int methodId;
 
-    public MethodHandlers(PaintGateway serviceImpl, int methodId) {
+    MethodHandlers(PaintGatewayImplBase serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
 
+    @java.lang.Override
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
@@ -229,6 +399,7 @@ public class PaintGatewayGrpc {
       }
     }
 
+    @java.lang.Override
     @java.lang.SuppressWarnings("unchecked")
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
@@ -245,37 +416,59 @@ public class PaintGatewayGrpc {
     }
   }
 
-  public static io.grpc.ServerServiceDefinition bindService(
-      final PaintGateway serviceImpl) {
-    return io.grpc.ServerServiceDefinition.builder(SERVICE_NAME)
-        .addMethod(
-          METHOD_CREATE_PAINT_ARTWORK_TASKS,
-          asyncBidiStreamingCall(
-            new MethodHandlers<
-              name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CreatePaintArtworkTask,
-              name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived>(
-                serviceImpl, METHODID_CREATE_PAINT_ARTWORK_TASKS)))
-        .addMethod(
-          METHOD_CREATE_PAINT_ARTWORK_TASK,
-          asyncServerStreamingCall(
-            new MethodHandlers<
-              name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CreatePaintArtworkTask,
-              name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived>(
-                serviceImpl, METHODID_CREATE_PAINT_ARTWORK_TASK)))
-        .addMethod(
-          METHOD_CANCEL_PAINT_ARTWORK_TASK,
-          asyncServerStreamingCall(
-            new MethodHandlers<
-              name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CancelPaintArtworkTask,
-              name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived>(
-                serviceImpl, METHODID_CANCEL_PAINT_ARTWORK_TASK)))
-        .addMethod(
-          METHOD_REPORT_TASK_STATE,
-          asyncBidiStreamingCall(
-            new MethodHandlers<
-              name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.UpdatePaintArtworkTask,
-              name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.CommandReceived>(
-                serviceImpl, METHODID_REPORT_TASK_STATE)))
-        .build();
+  private static abstract class PaintGatewayBaseDescriptorSupplier
+      implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
+    PaintGatewayBaseDescriptorSupplier() {}
+
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
+      return name.jchein.portfolio.services.randomArt.paintGateway.grpc.proto.ExampleProto.getDescriptor();
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
+      return getFileDescriptor().findServiceByName("PaintGateway");
+    }
+  }
+
+  private static final class PaintGatewayFileDescriptorSupplier
+      extends PaintGatewayBaseDescriptorSupplier {
+    PaintGatewayFileDescriptorSupplier() {}
+  }
+
+  private static final class PaintGatewayMethodDescriptorSupplier
+      extends PaintGatewayBaseDescriptorSupplier
+      implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
+    private final String methodName;
+
+    PaintGatewayMethodDescriptorSupplier(String methodName) {
+      this.methodName = methodName;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.MethodDescriptor getMethodDescriptor() {
+      return getServiceDescriptor().findMethodByName(methodName);
+    }
+  }
+
+  private static volatile io.grpc.ServiceDescriptor serviceDescriptor;
+
+  public static io.grpc.ServiceDescriptor getServiceDescriptor() {
+    io.grpc.ServiceDescriptor result = serviceDescriptor;
+    if (result == null) {
+      synchronized (PaintGatewayGrpc.class) {
+        result = serviceDescriptor;
+        if (result == null) {
+          serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
+              .setSchemaDescriptor(new PaintGatewayFileDescriptorSupplier())
+              .addMethod(getCreatePaintArtworkTasksMethod())
+              .addMethod(getCreatePaintArtworkTaskMethod())
+              .addMethod(getCancelPaintArtworkTaskMethod())
+              .addMethod(getReportTaskStateMethod())
+              .build();
+        }
+      }
+    }
+    return result;
   }
 }
