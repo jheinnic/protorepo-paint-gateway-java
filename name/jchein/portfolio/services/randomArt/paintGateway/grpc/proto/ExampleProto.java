@@ -109,23 +109,27 @@ public final class ExampleProto {
       "PROGRESS\020\002\022\r\n\tUPLOADING\020\003\022\n\n\006PAUSED\020\004\022\016\n" +
       "\nSOFT_ERROR\020\005\022\017\n\013FATAL_ERROR\020\006\022\014\n\010FINISH" +
       "ED\020\007\022\r\n\tCANCELLED\020\010\022\013\n\007DROPPED\020\t\022\n\n\006CLOS" +
-      "ED\020\n2\274\004\n\014PaintGateway\022\214\001\n\027createPaintArt" +
+      "ED\020\n2\307\005\n\014PaintGateway\022\214\001\n\027createPaintArt" +
       "workTasks\0228.name.jchein.portfolio.random" +
       "_art.CreatePaintArtworkTask\0321.name.jchei" +
       "n.portfolio.random_art.CommandReceived\"\000" +
-      "(\0010\001\022\211\001\n\026createPaintArtworkTask\0228.name.j" +
+      "(\0010\001\022\207\001\n\026createPaintArtworkTask\0228.name.j" +
       "chein.portfolio.random_art.CreatePaintAr" +
       "tworkTask\0321.name.jchein.portfolio.random" +
-      "_art.CommandReceived\"\0000\001\022\211\001\n\026cancelPaint" +
-      "ArtworkTask\0228.name.jchein.portfolio.rand" +
-      "om_art.CancelPaintArtworkTask\0321.name.jch" +
-      "ein.portfolio.random_art.CommandReceived" +
-      "\"\0000\001\022\204\001\n\017reportTaskState\0228.name.jchein.p" +
-      "ortfolio.random_art.UpdatePaintArtworkTa" +
-      "sk\0321.name.jchein.portfolio.random_art.Co" +
-      "mmandReceived\"\000(\0010\001BR\n@name.jchein.portf" +
-      "olio.services.randomArt.paintGateway.grp" +
-      "c.protoB\014ExampleProtoP\001b\006proto3"
+      "_art.CommandReceived\"\000\022\214\001\n\027cancelPaintAr" +
+      "tworkTasks\0228.name.jchein.portfolio.rando" +
+      "m_art.CancelPaintArtworkTask\0321.name.jche" +
+      "in.portfolio.random_art.CommandReceived\"" +
+      "\000(\0010\001\022\207\001\n\026cancelPaintArtworkTask\0228.name." +
+      "jchein.portfolio.random_art.CancelPaintA" +
+      "rtworkTask\0321.name.jchein.portfolio.rando" +
+      "m_art.CommandReceived\"\000\022\204\001\n\017reportTaskSt" +
+      "ate\0228.name.jchein.portfolio.random_art.U" +
+      "pdatePaintArtworkTask\0321.name.jchein.port" +
+      "folio.random_art.CommandReceived\"\000(\0010\001BR" +
+      "\n@name.jchein.portfolio.services.randomA" +
+      "rt.paintGateway.grpc.protoB\014ExampleProto" +
+      "P\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

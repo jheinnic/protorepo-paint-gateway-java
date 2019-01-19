@@ -22,7 +22,7 @@ public enum UpdateType
   IN_UPLOAD_QUEUE(1),
   /**
    * <pre>
-   * Uses PercentDoneUpdate bodE
+   * Uses PercentDoneUpdate body
    * </pre>
    *
    * <code>PAINT_PROGRESS = 2;</code>
@@ -38,7 +38,7 @@ public enum UpdateType
   PAUSED(4),
   /**
    * <pre>
-   * Uses RetryableErrorBody
+   * Uses RetryableErrorUpdate body
    * </pre>
    *
    * <code>SOFT_ERROR = 5;</code>
@@ -89,7 +89,7 @@ public enum UpdateType
   public static final int IN_UPLOAD_QUEUE_VALUE = 1;
   /**
    * <pre>
-   * Uses PercentDoneUpdate bodE
+   * Uses PercentDoneUpdate body
    * </pre>
    *
    * <code>PAINT_PROGRESS = 2;</code>
@@ -105,7 +105,7 @@ public enum UpdateType
   public static final int PAUSED_VALUE = 4;
   /**
    * <pre>
-   * Uses RetryableErrorBody
+   * Uses RetryableErrorUpdate body
    * </pre>
    *
    * <code>SOFT_ERROR = 5;</code>
